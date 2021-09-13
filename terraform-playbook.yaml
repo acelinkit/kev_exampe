@@ -1,0 +1,13 @@
+---
+- name: Create AWS resources
+  hosts: localhost
+  vars:
+    state: present
+
+  tasks: 
+  - name: Run terraform
+    community.general.terraform:
+      force_init: yes
+      project_path: "terraform/"
+      state: "{{ state }}"
+    register: terraform_result

@@ -1,0 +1,11 @@
+---
+- name: Create AWS resources
+  hosts: all
+  vars:
+    state: present
+
+  tasks: 
+  - name: Create hello world file
+    ansible.builtin.copy:
+      dest: "/tmp/hello"
+      content: "world"
